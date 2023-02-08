@@ -8,36 +8,41 @@ import json
 from models.base_model import BaseModel
 
 class FileStorage:
-"""
-A class that serializes instances to a
-JSON file and deserializes JSON file to instances.
-"""
+    """
+    A class that serializes instances to a
+    JSON file and deserializes JSON file to instances.
+    """
     __file_path = "file.json"
     __objects = {}
 
     def all(self):
+        """
+        A method that returns the __objects dictionary.
+
 	"""
-	A method that returns the __objects dictionary.
-	"""
+
         return FileStorage.__objects
 
     def new(self, obj):
-	"""
-	A method that adds an object to the __objects dictionary.
-	"""
+        """
+        A method that adds an object to the __objects dictionary.
+
+        """
+
         FileStorage.__objects["{}.{}".format(type(obj).__name__, obj.id)] = obj
 
     def save(self):
-	"""
-	A method that saves the objects stored in the __objects dictionary to the JSON file.
-	"""
+        """
+        A method that saves the objects stored in the __objects dictionary to the JSON file.
+
+        """
         with open(FileStorage.__file_path, 'w', encoding='utf-8') as f:
 
             objects_dict = {key: obj.to_dict() for key, obj in FileStorage.__objects.items()}
             json.dump(objects_dict, f)
 
     def reload(self):
-	"""
+        """
 	A method that reloads the objects from the JSON file and store them in the __objects dictionary.
 	"""
         try:
