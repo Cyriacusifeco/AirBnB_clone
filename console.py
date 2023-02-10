@@ -8,6 +8,11 @@ import cmd
 import models
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
@@ -19,6 +24,11 @@ class HBNBCommand(cmd.Cmd):
 
     allowed_classes = ["BaseModel",
                         "User"
+                        "State"
+                        "City"
+                        "Amenity"
+                        "Place"
+                        "Review"
                       ]
 
     def do_quit(self, arg):
