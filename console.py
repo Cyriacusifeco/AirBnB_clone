@@ -88,7 +88,7 @@ class HBNBCommand(cmd.Cmd):
 
             print("** class name missing **")
 
-        elif arg_list[0] != "BaseModel":
+        elif arg_list[0] not in HBNBCommand.allowed_classes:
 
             print("** class doesn't exist **")
 
