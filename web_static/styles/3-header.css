@@ -1,17 +1,7 @@
 header {
-  background-color: #4A90E2;
-  height: 70px;
-  width: 100%;
-  border-bottom: 1px solid #CCCCCC;
+    background: #FFFFFF url("../images/logo.png") no-repeat;
+    background-position: left 20px center;
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid #CCCCCC;
 }
-.logo {
-  display: inline-block;
-  margin-left: 20px;
-  height: 100%;
-  vertical-align: middle;
-}
-.logo img {
-  height: 60%;
-  vertical-align: middle;
-}
-
